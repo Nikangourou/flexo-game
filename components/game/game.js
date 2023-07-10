@@ -2,22 +2,32 @@ export default class Game {
   constructor() {
     this.pieces = [];
     this.nbPieces = 25;
+    this.nbRows = 5;
+    this.nbColumns = 5;
   }
 
   addPiece(piece) {
     this.pieces.push(piece);
   }
 
-  getPiece(position) {
-    for (let i = 0; i < this.pieces.length; i++) {
-      if (this.pieces[i].getPosition() === position) {
-        return this.pieces[i];
-      }
-    }
-  }
+  checkAdjacentPieces(piece1, piece2) {
+    const positionPiece1 = piece1.getAttribute("data-position");
+    const positionPiece2 = piece2.getAttribute("data-position");
+    const positionPiece1Row = Math.floor(positionPiece1 / this.nbRows);
+    const positionPiece1Column = positionPiece1 % this.nbColumns;
+    const positionPiece2Row = Math.floor(positionPiece2 / this.nbRows);
+    const positionPiece2Column = positionPiece2 % this.nbColumns;
 
-  getPieces() {
-    return this.pieces;
+    if (
+      (positionPiece1Row === positionPiece2Row &&
+        Math.abs(positionPiece1Column - positionPiece2Column) === 1) ||
+      (positionPiece1Column === positionPiece2Column &&
+        Math.abs(positionPiece1Row - positionPiece2Row) === 1)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   init() {
@@ -25,7 +35,7 @@ export default class Game {
     for (let i = 0; i < this.nbPieces; i++) {
       const recepPiece = document.createElement("div");
       recepPiece.classList.add("recepPiece");
-      recepPiece.setAttribute("data-position", i);
+      recepPiece.setAttribute("data-position", i + 1);
       containerGame.appendChild(recepPiece);
     }
   }

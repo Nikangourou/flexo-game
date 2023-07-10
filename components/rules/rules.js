@@ -10,18 +10,6 @@ export default class Rules {
     this.rules.push(rule);
   }
 
-  getRule(name) {
-    for (let i = 0; i < this.rules.length; i++) {
-      if (this.rules[i].getName() === name) {
-        return this.rules[i];
-      }
-    }
-  }
-
-  getRules() {
-    return this.rules;
-  }
-
   init() {
     const containerRules = document.querySelector(".containerRules");
     for (let i = 0; i < dataRules.length; i++) {

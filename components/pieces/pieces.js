@@ -10,27 +10,19 @@ export default class Pieces {
     this.pieces.push(piece);
   }
 
-  getPiece(position) {
-    for (let i = 0; i < this.pieces.length; i++) {
-      if (this.pieces[i].getPosition() === position) {
-        return this.pieces[i];
+  getPiece(name) {
+    for (const piece of this.pieces) {
+      if (piece.name === name) {
+        return piece;
       }
     }
-  }
-
-  getPieces() {
-    return this.pieces;
   }
 
   init() {
     const containerPieces = document.querySelector(".containerPieces");
 
     for (let i = 0; i < dataPieces.length; i++) {
-      const piece = new Piece(
-        dataPieces[i].name,
-        dataPieces[i].position,
-        dataPieces[i].picture
-      );
+      const piece = new Piece(dataPieces[i].name, dataPieces[i].picture);
       this.addPiece(piece);
       containerPieces.innerHTML += piece.getHtml();
     }

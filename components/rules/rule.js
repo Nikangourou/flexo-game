@@ -3,14 +3,11 @@ export default class Rule {
     this.name = name;
   }
 
-  getName() {
-    return this.name;
-  }
 
   getHtml() {
     return `
             <div class="rule">
-             <p>${this.name}"</p>
+             <p>${this.name}</p>
             </div>
             `;
   }

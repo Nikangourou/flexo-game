@@ -54,9 +54,19 @@ function handleDrop(event) {
   const receptacle = event.currentTarget;
 
   // Vérifier si le réceptacle contient déjà une pièce ou si le receptacle n'est pas le containerPieces
-  if (receptacle.children.length > 0 && !receptacle.classList.contains("containerPieces")) {
+  if (
+    receptacle.children.length > 0 &&
+    !receptacle.classList.contains("containerPieces")
+  ) {
     return;
   }
+
+  // get piece name
+  const pieceName = draggedPiece.getAttribute("data-name");
+  // get piece object
+  const piece = pieces.getPiece(pieceName);
+  // set piece position
+  piece.setPosition(receptacle.getAttribute("data-position"));
 
   // Ajouter la pièce au réceptacle
   receptacle.appendChild(draggedPiece);
