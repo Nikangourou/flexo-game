@@ -1,0 +1,21 @@
+@import "vars.scss";
+
+.containerPieces{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 210px;
+    align-content: center;
+    grid-gap: 10px;   
+    background-color: $orange;
+    padding: 10px;
+}
+
+.piece{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+
+    img{
+        width: 100%;
+    }
+}
