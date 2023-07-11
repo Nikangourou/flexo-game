@@ -1,7 +1,7 @@
 @import "vars.scss";
 
 .containerGame{
-    background-color: $blue;
+    background-color: $red;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
@@ -10,11 +10,11 @@
     .recepPiece{
         width: 100px;
         height: 100px;
-        background-color: gray;
+        background-color: #650000;
         text-align: center;
 
         &.preview{
-            background-color: red;
+            background-color: $green;
         }
     }
 }

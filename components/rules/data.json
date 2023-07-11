@@ -1,12 +1,22 @@
 [
     {
-        "name": "Kevin à côté de Renaud",
+        "name": "Your password must include a number.",
         "id": 1
     },
     {
-        "name": "Amet Consectetur"
+        "name" : "Your password must be at least 5 characters.",
+        "id": 2
     },
     {
-        "name": "Adipiscing Elit"
+        "name": "Kevin à côté de Renaud",
+        "id": 3
+    },
+    {
+        "name": "Amet Consectetur",
+        "id": 4
+    },
+    {
+        "name": "Adipiscing Elit",
+        "id": 5
     }
 ]

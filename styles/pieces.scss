@@ -2,12 +2,12 @@
 
 .containerPieces{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 210px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 430px;
     align-content: center;
     grid-gap: 10px;   
-    background-color: $orange;
     padding: 10px;
+    border: 1px solid white;
 }
 
 .piece{

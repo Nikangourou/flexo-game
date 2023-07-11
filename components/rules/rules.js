@@ -13,7 +13,7 @@ export default class Rules {
   init() {
     const containerRules = document.querySelector(".containerRules");
     for (let i = 0; i < dataRules.length; i++) {
-      const rule = new Rule(dataRules[i].name);
+      const rule = new Rule(dataRules[i].name, dataRules[i].id);
       this.addRule(rule);
       containerRules.innerHTML += rule.getHtml();
     }

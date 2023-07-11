@@ -1,26 +1,78 @@
 [
   {
-    "name": "Kevin",
-    "picture": "piece.png"
+    "name": "Paul",
+    "picture": "paul.png"
   },
   {
     "name": "Renaud",
-    "picture": "piece.png"
+    "picture": "renaud.png"
   },
   {
-    "name": "Matthieu",
-    "picture": "piece.png"
+    "name": "Rodrigue",
+    "picture": "rodrigue.png"
   },
   {
     "name": "Francis",
-    "picture": "piece.png"
+    "picture": "francis.png"
   },
   {
-    "name": "François",
-    "picture": "piece.png"
+    "name": "Anais",
+    "picture": "anais.png"
+  },
+  {
+    "name": "Kevin",
+    "picture": "kevin.png"
+  },
+  {
+    "name" : "Mathieu",
+    "picture": "mathieu.png"
   },
   {
     "name": "Marianne",
+    "picture": "marianne.png"
+  },
+  {
+    "name": "François",
+    "picture": "francois.png"
+  },
+  {
+    "name": "Fba",
+    "picture": "fba.png"
+  },
+  {
+    "name": "Robin",
+    "picture": "robin.png"
+  },
+  {
+    "name" : "Nicolas",
     "picture": "piece.png"
+  },
+  {
+    "name": "Quentin",
+    "picture": "quentin.png"
+  },
+  {
+    "name": "Sarah",
+    "picture": "sarah.png"
+  },
+  {
+    "name": "Olivier",
+    "picture": "olivier.png"
+  }, {
+    "name": "Agathe",
+    "picture": "agathe.png"
+  },
+  {
+    "name": "Osei",
+    "picture": "osei.png"
+  },{
+    "name": "Amina",
+    "picture": "amina.png"
+  },{
+    "name": "Stephane",
+    "picture": "stephane.png"
+  },{
+    "name": "Philippe",
+    "picture": "philippe.png"
   }
 ]
