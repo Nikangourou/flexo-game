@@ -1,18 +1,15 @@
 export default class Game {
   constructor() {
-    this.pieces = [];
     this.nbPieces = 25;
     this.nbRows = 5;
     this.nbColumns = 5;
   }
 
-  addPiece(piece) {
-    this.pieces.push(piece);
-  }
+
 
   checkAdjacentPieces(piece1, piece2) {
-    const positionPiece1 = piece1.getAttribute("data-position");
-    const positionPiece2 = piece2.getAttribute("data-position");
+    const positionPiece1 = piece1.getPosition();
+    const positionPiece2 = piece2.getPosition();
     const positionPiece1Row = Math.floor(positionPiece1 / this.nbRows);
     const positionPiece1Column = positionPiece1 % this.nbColumns;
     const positionPiece2Row = Math.floor(positionPiece2 / this.nbRows);

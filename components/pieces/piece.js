@@ -1,5 +1,5 @@
 export default class Piece {
-  constructor(name, picture, position = null) {
+  constructor(name, picture, position = 0) {
     this.name = name;
     this.picture = picture;
     this.position = position;

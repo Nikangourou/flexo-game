@@ -24,7 +24,7 @@
     "picture": "kevin.png"
   },
   {
-    "name" : "Mathieu",
+    "name": "Mathieu",
     "picture": "mathieu.png"
   },
   {
@@ -44,7 +44,7 @@
     "picture": "robin.png"
   },
   {
-    "name" : "Nicolas",
+    "name": "Nicolas",
     "picture": "piece.png"
   },
   {
@@ -58,21 +58,42 @@
   {
     "name": "Olivier",
     "picture": "olivier.png"
-  }, {
+  },
+  {
     "name": "Agathe",
     "picture": "agathe.png"
   },
   {
     "name": "Osei",
     "picture": "osei.png"
-  },{
+  },
+  {
     "name": "Amina",
     "picture": "amina.png"
-  },{
+  },
+  {
     "name": "Stephane",
     "picture": "stephane.png"
-  },{
+  },
+  {
     "name": "Philippe",
     "picture": "philippe.png"
+  },
+  {
+    "name": "Isabelle",
+    "picture": "isabelle.png"
+  },
+  {
+    "name": "Lea",
+    "picture": "lea.png"
+  },{
+    "name" : "Kelthoum",
+    "picture" : "kelthoum.png"
+  },{
+    "name" : "Frederic",
+    "picture" : "frederic.png"
+  },{
+    "name" : "Felicie",
+    "picture" : "felicie.png"
   }
 ]
