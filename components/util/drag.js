@@ -1,7 +1,8 @@
 export default class Drag {
-  constructor(pieces, rules) {
+  constructor(pieces, rules, game) {
     this.pieces = pieces;
     this.rules = rules;
+    this.game = game;
   }
 
   init() {
@@ -61,6 +62,8 @@ export default class Drag {
       // Ajouter la pièce au réceptacle
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
+
+      this.game.nbPiecesInGame++;
 
       this.rules.checkRules();
     };

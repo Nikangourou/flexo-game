@@ -2,25 +2,24 @@
 
 .containerRules {
   width: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 
   .rule {
     margin-bottom: 30px;
+    display: none;
 
-    &.wrong {
-      .title {
-        background-color: $red;
-      }
-      .content {
-        background-color: $red50;
-      }
+    &.active {
+      display: block;
     }
 
-    &:nth-child(2n) {
+    &.valid {
       .title {
-        background-color: $red;
+        background-color: $green;
       }
       .content {
-        background-color: $red50;
+        background-color: $green50;
       }
     }
 
@@ -28,7 +27,7 @@
       font-weight: bold;
       font-size: 15px;
       margin-bottom: 10px;
-      background-color: $green;
+      background-color: $red;
       padding: 5px;
       margin: 0;
     }
@@ -37,7 +36,7 @@
       font-size: 15px;
       padding: 5px;
       margin: 0;
-      background-color: $green50;
+      background-color: $red50;
     }
   }
 }

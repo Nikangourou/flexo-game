@@ -3,9 +3,12 @@ export default class Game {
     this.nbPieces = 25;
     this.nbRows = 5;
     this.nbColumns = 5;
+    this.nbPiecesInGame = 0;
   }
 
-
+  getNbPiecesInGame() {
+    return this.nbPiecesInGame;
+  }
 
   checkAdjacentPieces(piece1, piece2) {
     const positionPiece1 = piece1.getPosition();

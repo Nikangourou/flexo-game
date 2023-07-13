@@ -1,22 +1,14 @@
 [
     {
-        "name": "Your password must include a number.",
+        "name": "Placer 3 personnes sur le Flexo",
         "id": 1
     },
     {
-        "name" : "Quentin à côté de Léa",
+        "name" : "<b>Quentin</b> à côté de <b>Léa</b>",
         "id": 2
     },
     {
-        "name": "Kevin à côté de Renaud",
+        "name": "Work in progress",
         "id": 3
-    },
-    {
-        "name": "Amet Consectetur",
-        "id": 4
-    },
-    {
-        "name": "Adipiscing Elit",
-        "id": 5
     }
 ]

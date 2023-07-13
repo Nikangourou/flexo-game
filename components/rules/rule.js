@@ -7,18 +7,26 @@ export default class Rule {
   }
 
   checkRule1() {
+    return this.game.getNbPiecesInGame() > 2;
+  }
+
+  checkRule2() {
     const piece1 = this.pieces.getPiece("Quentin");
     const piece2 = this.pieces.getPiece("Lea");
 
-    this.game.checkAdjacentPieces(piece1, piece2)
-      ? console.log("true")
-      : console.log("false");
+    return this.game.checkAdjacentPieces(piece1, piece2);
   }
 
   checkRule() {
+    // rule 1
     if (this.id === 1) {
-      this.checkRule1();
+      return this.checkRule1();
     }
+    // rule 2
+    if (this.id === 2) {
+      return this.checkRule2();
+    }
+
   }
 
   getHtml() {
