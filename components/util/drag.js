@@ -49,6 +49,7 @@ export default class Drag {
         receptacle.children.length > 0 &&
         !receptacle.classList.contains("containerPieces")
       ) {
+        console.log(this.game.nbPiecesInGame);
         return;
       }
 
@@ -63,7 +64,11 @@ export default class Drag {
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
 
-      this.game.nbPiecesInGame++;
+      if (receptacle.classList.contains("containerPieces")) {
+        this.game.nbPiecesInGame--;
+      } else {
+        this.game.nbPiecesInGame++;
+      }
 
       this.rules.checkRules();
     };
