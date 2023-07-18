@@ -40,6 +40,7 @@ export default class Drag {
     };
 
     // Fonction de gestion du dépôt de la pièce dans le réceptacle
+
     const handleDrop = (event) => {
       event.preventDefault();
       const receptacle = event.currentTarget;
@@ -63,11 +64,9 @@ export default class Drag {
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
 
-      if (receptacle.classList.contains("containerPieces")) {
-        this.game.nbPiecesInGame--;
-      } else {
-        this.game.nbPiecesInGame++;
-      }
+      this.game.nbPiecesInGame = document.querySelectorAll(
+        ".containerGame .piece"
+      ).length;
 
       this.rules.checkRules();
     };

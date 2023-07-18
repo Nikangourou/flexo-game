@@ -19,3 +19,7 @@ rules.init();
 const drag = new Drag(pieces, rules, game);
 drag.init();
 
+const replay = document.querySelector(".replay");
+replay.addEventListener("click", () => {
+  window.location.reload();
+});

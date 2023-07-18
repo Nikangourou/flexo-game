@@ -10,9 +10,10 @@ export default class Pieces {
     this.pieces.push(piece);
   }
 
-  getPiece(name) {
+
+  getPiece(id) {
     for (const piece of this.pieces) {
-      if (piece.name === name) {
+      if (piece.id === id) {
         return piece;
       }
     }
@@ -22,7 +23,11 @@ export default class Pieces {
     const containerPieces = document.querySelector(".containerPieces");
 
     for (let i = 0; i < dataPieces.length; i++) {
-      const piece = new Piece(dataPieces[i].name, dataPieces[i].picture);
+      const piece = new Piece(
+        dataPieces[i].id,
+        dataPieces[i].name,
+        dataPieces[i].picture
+      );
       this.addPiece(piece);
       containerPieces.innerHTML += piece.getHtml();
     }

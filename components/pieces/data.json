@@ -1,99 +1,127 @@
 [
   {
     "name": "Paul",
-    "picture": "paul.png"
+    "picture": "paul.png",
+    "id": "paul"
   },
   {
     "name": "Le fou",
-    "picture": "renaud.png"
+    "picture": "renaud.png",
+    "id": "renaud"
   },
   {
     "name": "Rodrigue",
-    "picture": "rodrigue.png"
+    "picture": "rodrigue.png",
+    "id": "rodrigue"
   },
   {
     "name": "Francis",
-    "picture": "francis.png"
+    "picture": "francis.png",
+    "id": "francis"
   },
   {
     "name": "Anais",
-    "picture": "anais.png"
+    "picture": "anais.png",
+    "id": "anais"
   },
   {
     "name": "La Bête",
-    "picture": "kevin.png"
+    "picture": "kevin.png",
+    "id": "kevin"
   },
   {
-    "name": "Mathieu",
-    "picture": "mathieu.png"
+    "name": "City Haut",
+    "picture": "matthieu.png",
+    "id": "matthieu"
   },
   {
     "name": "Chemisette",
-    "picture": "marianne.png"
+    "picture": "marianne.png",
+    "id": "marianne"
   },
   {
     "name": "François",
-    "picture": "francois.png"
+    "picture": "francois.png",
+    "id": "francois"
   },
   {
     "name": "Le Capitaine",
-    "picture": "fba.png"
+    "picture": "fba.png",
+    "id": "fba"
   },
   {
     "name": "Robin",
-    "picture": "robin.png"
+    "picture": "robin.png",
+    "id": "robin"
   },
   {
     "name": "Le roi",
-    "picture": "nicolas.png"
+    "picture": "nicolas.png",
+    "id": "nicolas"
   },
   {
     "name": "Tata Jacqu",
-    "picture": "quentin.png"
+    "picture": "quentin.png",
+    "id": "quentin"
   },
   {
     "name": "Sarah",
-    "picture": "sarah.png"
+    "picture": "sarah.png",
+    "id": "sarah"
   },
   {
     "name": "Le Paysan",
-    "picture": "olivier.png"
+    "picture": "olivier.png",
+    "id": "olivier"
   },
   {
     "name": "Agathe",
-    "picture": "agathe.png"
+    "picture": "agathe.png",
+    "id": "agathe"
   },
   {
     "name": "Teddy Riner",
-    "picture": "osei.png"
+    "picture": "osei.png",
+    "id": "osei"
   },
   {
-    "name": "Amina",
-    "picture": "amina.png"
+    "name": "La Reptilienne",
+    "picture": "amina.png",
+    "id": "amina"
   },
   {
-    "name": "Stephane",
-    "picture": "stephane.png"
+    "name": "Le Renne",
+    "picture": "stephane.png",
+    "id": "stephane"
   },
   {
-    "name": "Philippe",
-    "picture": "philippe.png"
+    "name": "Le Raton",
+    "picture": "philippe.png",
+    "id": "philippe"
   },
   {
     "name": "Isabelle",
-    "picture": "isabelle.png"
+    "picture": "isabelle.png",
+    "id": "isabelle"
   },
   {
     "name": "Le Pirahna",
-    "picture": "lea.png"
-  },{
-    "name" : "La Lionne",
-    "picture" : "kelthoum.png"
-  },{
-    "name" : "L'Erminig",
-    "picture" : "frederic.png"
-  },{
-    "name" : "L'Elfe",
-    "picture" : "felicie.png"
+    "picture": "lea.png",
+    "id": "lea"
+  },
+  {
+    "name": "La Lionne",
+    "picture": "kelthoum.png",
+    "id": "kelthoum"
+  },
+  {
+    "name": "L'Erminig",
+    "picture": "frederic.png",
+    "id": "frederic"
+  },
+  {
+    "name": "L'Elfe",
+    "picture": "felicie.png",
+    "id": "felicie"
   }
 ]

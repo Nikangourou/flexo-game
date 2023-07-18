@@ -10,6 +10,21 @@ export default class Game {
     return this.nbPiecesInGame;
   }
 
+  checkCornerPiece(piece) {
+    const positionPiece = piece.getPosition();
+
+    if (
+      positionPiece === 1 ||
+      positionPiece === 5 ||
+      positionPiece === 21 ||
+      positionPiece === 25
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   checkAdjacentPieces(piece1, piece2) {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
@@ -28,6 +43,13 @@ export default class Game {
     } else {
       return false;
     }
+  }
+
+  endGame(message) {
+    const loose = document.querySelector(".containerLoose");
+    const content = loose.querySelector(".message");
+    content.innerHTML = message;
+    loose.classList.add("active");
   }
 
   init() {
