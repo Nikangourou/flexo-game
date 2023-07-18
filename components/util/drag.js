@@ -17,6 +17,12 @@ export default class Drag {
       if (draggedPiece) {
         event.currentTarget.classList.add("preview");
       }
+      
+      if (draggedPiece.getAttribute("data-name") === "osei"){
+        let position = event.currentTarget.getAttribute("data-position");
+        position = parseInt(position);
+        this.game.addCrackPiece(position);
+      }
     };
 
     // Fonction de réinitialisation de la prévisualisation du réceptacle
@@ -64,6 +70,10 @@ export default class Drag {
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
 
+      if (pieceName === "osei") {
+        this.game.removeAdjacentPieces(this.pieces.getPiece(pieceName));
+      }
+      
       this.game.nbPiecesInGame = document.querySelectorAll(
         ".containerGame .piece"
       ).length;

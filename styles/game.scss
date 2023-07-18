@@ -1,20 +1,25 @@
 @import "vars.scss";
 
-.containerGame{
-    background-color: $red;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 25px;
-    padding: 25px;
+.containerGame {
+  background-color: $red;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  padding: 25px;
 
-    .recepPiece{
-        width: 100px;
-        height: 100px;
-        background-color: #650000;
-        text-align: center;
+  .recepPiece {
+    width: 100px;
+    height: 100px;
+    background-color: #650000;
+    text-align: center;
 
-        &.preview{
-            background-color: $green;
-        }
+    &.crack {
+      background-image: url("/images/crack.png");
+      background-size: cover;
     }
+
+    &.preview {
+      background-color: $green;
+    }
+  }
 }

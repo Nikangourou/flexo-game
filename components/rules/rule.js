@@ -26,7 +26,7 @@ export default class Rule {
     }
 
     if (this.game.checkAdjacentPieces(pirahna, raton)) {
-      this.game.endGame("Le Renne a été mangé par Le Pirahna");
+      this.game.endGame("Le Raton a été mangé par Le Pirahna");
     }
   }
 

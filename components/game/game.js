@@ -25,6 +25,33 @@ export default class Game {
     }
   }
 
+  getArroundPositions(position) {
+    const aroundPositions = [
+      position - 1,
+      position + 1,
+      position - this.nbRows,
+      position + this.nbRows,
+    ];
+
+    if (position % this.nbRows === 0) {
+      aroundPositions.splice(1, 1);
+    }
+
+    if (position % this.nbRows === 1) {
+      aroundPositions.splice(0, 1);
+    }
+
+    if (position <= this.nbRows) {
+      aroundPositions.splice(2, 1);
+    }
+
+    if (position > this.nbPieces - this.nbRows) {
+      aroundPositions.splice(3, 1);
+    }
+
+    return aroundPositions;
+  }
+
   checkAdjacentPieces(piece1, piece2) {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
@@ -42,6 +69,40 @@ export default class Game {
       return true;
     } else {
       return false;
+    }
+  }
+
+  addCrackPiece(position) {
+    const crackPieces = document.querySelectorAll(".crack");
+    for (const crackPiece of crackPieces) {
+      crackPiece.classList.remove("crack");
+    }
+
+    const aroundPieces = this.getArroundPositions(position);
+
+    for (const aroundPiece of aroundPieces) {
+      const recepPiece = document.querySelector(
+        `.recepPiece[data-position="${aroundPiece}"]`
+      );
+      if (recepPiece) {
+        recepPiece.classList.add("crack");
+      }
+    }
+  }
+
+  removeAdjacentPieces(piece) {
+    const positionPiece = piece.getPosition();
+    const aroundPieces = this.getArroundPositions(positionPiece);
+    const containerPieces = document.querySelector(".containerPieces");
+
+    for (const aroundPiece of aroundPieces) {
+      const recepPiece = document.querySelector(
+        `.recepPiece[data-position="${aroundPiece}"]`
+      );
+      if (recepPiece.children.length > 0) {
+        containerPieces.appendChild(recepPiece.children[0]);
+        recepPiece.innerHTML = "";
+      }
     }
   }
 
