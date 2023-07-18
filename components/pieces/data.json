@@ -4,7 +4,7 @@
     "picture": "paul.png"
   },
   {
-    "name": "Renaud",
+    "name": "Le fou",
     "picture": "renaud.png"
   },
   {
@@ -20,7 +20,7 @@
     "picture": "anais.png"
   },
   {
-    "name": "Kevin",
+    "name": "La Bête",
     "picture": "kevin.png"
   },
   {
@@ -28,7 +28,7 @@
     "picture": "mathieu.png"
   },
   {
-    "name": "Marianne",
+    "name": "Chemisette",
     "picture": "marianne.png"
   },
   {
@@ -36,7 +36,7 @@
     "picture": "francois.png"
   },
   {
-    "name": "Fba",
+    "name": "Le Capitaine",
     "picture": "fba.png"
   },
   {
@@ -44,11 +44,11 @@
     "picture": "robin.png"
   },
   {
-    "name": "Nicolas",
-    "picture": "piece.png"
+    "name": "Le roi",
+    "picture": "nicolas.png"
   },
   {
-    "name": "Quentin",
+    "name": "Tata Jacqu",
     "picture": "quentin.png"
   },
   {
@@ -56,7 +56,7 @@
     "picture": "sarah.png"
   },
   {
-    "name": "Olivier",
+    "name": "Le Paysan",
     "picture": "olivier.png"
   },
   {
@@ -64,7 +64,7 @@
     "picture": "agathe.png"
   },
   {
-    "name": "Osei",
+    "name": "Teddy Riner",
     "picture": "osei.png"
   },
   {
@@ -84,16 +84,16 @@
     "picture": "isabelle.png"
   },
   {
-    "name": "Lea",
+    "name": "Le Pirahna",
     "picture": "lea.png"
   },{
-    "name" : "Kelthoum",
+    "name" : "La Lionne",
     "picture" : "kelthoum.png"
   },{
-    "name" : "Frederic",
+    "name" : "L'Erminig",
     "picture" : "frederic.png"
   },{
-    "name" : "Felicie",
+    "name" : "L'Elfe",
     "picture" : "felicie.png"
   }
 ]

@@ -49,7 +49,6 @@ export default class Drag {
         receptacle.children.length > 0 &&
         !receptacle.classList.contains("containerPieces")
       ) {
-        console.log(this.game.nbPiecesInGame);
         return;
       }
 

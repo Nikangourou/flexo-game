@@ -22,7 +22,6 @@ export default class Rules {
         rule.classList.add("valid");
         tmpNbShowRules++;
       } else {
-        console.log(rule);
         rule.classList.remove("valid");
       }
     }
