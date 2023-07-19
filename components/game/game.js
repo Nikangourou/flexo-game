@@ -98,6 +98,20 @@ export default class Game {
     return false;
   }
 
+  checkDiagonalPieces(piece1, piece2) {
+    const positionPiece1 = piece1.getPosition();
+    const positionPiece2 = piece2.getPosition();
+
+    const diagonalPositions = this.getDiagonalPositions(positionPiece1);
+
+    for (const diagonalPosition of diagonalPositions) {
+      if (diagonalPosition === positionPiece2) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   checkAroundPaysan(position) {
     const aroundPieces = this.getAdjacentPositions(position);
     const diagonalPieces = this.getDiagonalPositions(position);

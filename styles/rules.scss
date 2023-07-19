@@ -1,42 +1,47 @@
 @import "vars.scss";
 
-.containerRules {
-  width: 300px;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
+.scroller {
+  height: 650px;
+  overflow: scroll;
 
-  .rule {
-    margin-bottom: 30px;
-    display: none;
+  .containerRules {
+    width: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
 
-    &.active {
-      display: block;
-    }
+    .rule {
+      margin-bottom: 30px;
+      display: none;
 
-    &.valid {
+      &.active {
+        display: block;
+      }
+
+      &.valid {
+        .title {
+          background-color: $green;
+        }
+        .content {
+          background-color: $green50;
+        }
+      }
+
       .title {
-        background-color: $green;
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 10px;
+        background-color: $red;
+        padding: 5px;
+        margin: 0;
       }
+
       .content {
-        background-color: $green50;
+        font-size: 15px;
+        padding: 5px;
+        margin: 0;
+        background-color: $red50;
       }
-    }
-
-    .title {
-      font-weight: bold;
-      font-size: 15px;
-      margin-bottom: 10px;
-      background-color: $red;
-      padding: 5px;
-      margin: 0;
-    }
-
-    .content {
-      font-size: 15px;
-      padding: 5px;
-      margin: 0;
-      background-color: $red50;
     }
   }
 }

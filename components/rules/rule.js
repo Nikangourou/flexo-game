@@ -57,6 +57,12 @@ export default class Rule {
     return piece.getPosition() === 10;
   }
 
+  checkRule6() {
+    const piece1 = this.pieces.getPiece("renaud");
+    const piece2 = this.pieces.getPiece("nicolas");
+    return this.game.checkDiagonalPieces(piece1, piece2);
+  }
+
   checkRule() {
     this.checkRulePredator();
 
@@ -85,6 +91,11 @@ export default class Rule {
     if (this.id === 5) {
       // return true;
       return this.checkRule5();
+    }
+
+    if (this.id === 6) {
+      // return true;
+      return this.checkRule6();
     }
   }
 
