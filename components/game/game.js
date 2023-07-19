@@ -26,7 +26,7 @@ export default class Game {
     }
   }
 
-  getArroundPositions(position) {
+  getAdjacentPositions(position) {
     const aroundPositions = [
       position - 1,
       position + 1,
@@ -53,24 +53,64 @@ export default class Game {
     return aroundPositions;
   }
 
+  getDiagonalPositions(position) {
+    const diagonalPositions = [
+      position - this.nbRows - 1,
+      position - this.nbRows + 1,
+      position + this.nbRows - 1,
+      position + this.nbRows + 1,
+    ];
+
+    if (position % this.nbRows === 0) {
+      diagonalPositions.splice(1, 1);
+      diagonalPositions.splice(2, 1);
+    }
+
+    if (position % this.nbRows === 1) {
+      diagonalPositions.splice(0, 1);
+      diagonalPositions.splice(1, 1);
+    }
+
+    if (position <= this.nbRows) {
+      diagonalPositions.splice(0, 1);
+      diagonalPositions.splice(1, 1);
+    }
+
+    if (position > this.nbPieces - this.nbRows) {
+      diagonalPositions.splice(2, 1);
+      diagonalPositions.splice(3, 1);
+    }
+
+    return diagonalPositions;
+  }
+  
   checkAdjacentPieces(piece1, piece2) {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
-    const positionPiece1Row = Math.floor(positionPiece1 / this.nbRows);
-    const positionPiece1Column = positionPiece1 % this.nbColumns;
-    const positionPiece2Row = Math.floor(positionPiece2 / this.nbRows);
-    const positionPiece2Column = positionPiece2 % this.nbColumns;
+  
+    const aroundPositions = this.getAdjacentPositions(positionPiece1);
 
-    if (
-      (positionPiece1Row === positionPiece2Row &&
-        Math.abs(positionPiece1Column - positionPiece2Column) === 1) ||
-      (positionPiece1Column === positionPiece2Column &&
-        Math.abs(positionPiece1Row - positionPiece2Row) === 1)
-    ) {
-      return true;
-    } else {
-      return false;
+    for (const aroundPosition of aroundPositions) {
+      if (aroundPosition === positionPiece2) {
+        return true;
+      }
     }
+    return false;
+  }
+
+  checkAroundPieces(piece) {
+    const positionPiece = piece.getPosition();
+    const aroundPieces = this.getAdjacentPositions(positionPiece);
+
+    for (const aroundPiece of aroundPieces) {
+      const recepPiece = document.querySelector(
+        `.recepPiece[data-position="${aroundPiece}"]`
+      );
+      if (recepPiece && recepPiece.children.length > 0) {
+        return true;
+      }
+    }
+    return false;
   }
 
   addCrackPiece(position) {
@@ -79,8 +119,7 @@ export default class Game {
       crackPiece.classList.remove("crack");
     }
 
-    const aroundPieces = this.getArroundPositions(position);
-    console.log(aroundPieces)
+    const aroundPieces = this.getAdjacentPositions(position);
 
     for (const aroundPiece of aroundPieces) {
       const recepPiece = document.querySelector(
@@ -94,7 +133,7 @@ export default class Game {
 
   removeAdjacentPieces(piece) {
     const positionPiece = piece.getPosition();
-    const aroundPieces = this.getArroundPositions(positionPiece);
+    const aroundPieces = this.getAdjacentPositions(positionPiece);
     const containerPieces = document.querySelector(".containerPieces");
 
     for (const aroundPiece of aroundPieces) {

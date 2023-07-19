@@ -47,23 +47,31 @@ export default class Rule {
     return this.game.checkCornerPiece(piece);
   }
 
+  checkRule4() {}
+
   checkRule() {
     this.checkRulePredator();
 
     // rule 1
     if (this.id === 1) {
+      // return true;
       return this.checkRule1();
     }
     // rule 2
     if (this.id === 2) {
+      // return true;
       return this.checkRule2();
     }
 
     // rule 3
     if (this.id === 3) {
+      // return true;
       return this.checkRule3();
     }
 
+    if (this.id === 4) {
+      return this.checkRule4();
+    }
   }
 
   getHtml() {
