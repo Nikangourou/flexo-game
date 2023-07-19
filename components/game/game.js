@@ -1,9 +1,10 @@
 export default class Game {
-  constructor() {
+  constructor(pieces) {
     this.nbPieces = 25;
     this.nbRows = 5;
     this.nbColumns = 5;
     this.nbPiecesInGame = 0;
+    this.pieces = pieces;
   }
 
   getNbPiecesInGame() {
@@ -42,7 +43,7 @@ export default class Game {
     }
 
     if (position <= this.nbRows) {
-      aroundPositions.splice(2, 1);
+      // aroundPositions.splice(2, 1);
     }
 
     if (position > this.nbPieces - this.nbRows) {
@@ -79,6 +80,7 @@ export default class Game {
     }
 
     const aroundPieces = this.getArroundPositions(position);
+    console.log(aroundPieces)
 
     for (const aroundPiece of aroundPieces) {
       const recepPiece = document.querySelector(
@@ -99,7 +101,9 @@ export default class Game {
       const recepPiece = document.querySelector(
         `.recepPiece[data-position="${aroundPiece}"]`
       );
-      if (recepPiece.children.length > 0) {
+      if (recepPiece && recepPiece.children.length > 0) {
+        const pieceName = recepPiece.children[0].getAttribute("data-name");
+        this.pieces.getPiece(pieceName).setPosition(null);
         containerPieces.appendChild(recepPiece.children[0]);
         recepPiece.innerHTML = "";
       }

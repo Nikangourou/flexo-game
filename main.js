@@ -10,7 +10,7 @@ import Drag from "./components/util/drag";
 const pieces = new Pieces();
 pieces.init();
 
-const game = new Game();
+const game = new Game(pieces);
 game.init();
 
 const rules = new Rules(game, pieces);
