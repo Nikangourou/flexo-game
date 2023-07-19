@@ -83,11 +83,11 @@ export default class Game {
 
     return diagonalPositions;
   }
-  
+
   checkAdjacentPieces(piece1, piece2) {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
-  
+
     const aroundPositions = this.getAdjacentPositions(positionPiece1);
 
     for (const aroundPosition of aroundPositions) {
@@ -98,53 +98,98 @@ export default class Game {
     return false;
   }
 
-  checkAroundPieces(piece) {
-    const positionPiece = piece.getPosition();
-    const aroundPieces = this.getAdjacentPositions(positionPiece);
+  checkAroundPaysan(position) {
+    const aroundPieces = this.getAdjacentPositions(position);
+    const diagonalPieces = this.getDiagonalPositions(position);
+    const allPieces = aroundPieces.concat(diagonalPieces);
 
-    for (const aroundPiece of aroundPieces) {
-      const recepPiece = document.querySelector(
-        `.recepPiece[data-position="${aroundPiece}"]`
-      );
-      if (recepPiece && recepPiece.children.length > 0) {
-        return true;
+    const idPieces = [
+      "quentin",
+      "kelthoum",
+      "frederic",
+      "stephane",
+      "philippe",
+    ];
+
+    for (const idPiece of idPieces) {
+      let found = false;
+      for (const aroundPiece of allPieces) {
+        const piece = document.querySelector(
+          `.recepPiece[data-position="${aroundPiece}"] .piece`
+        );
+        if (piece) {
+          const pieceName = piece.getAttribute("data-name");
+          if (pieceName === idPiece) {
+            found = true;
+          }
+        }
+      }
+
+      if (!found) {
+        return false;
       }
     }
-    return false;
+    return true;
+  }
+
+  addWheatPiece(position) {
+    const wheatPieces = document.querySelectorAll(".wheat");
+    for (const wheatPiece of wheatPieces) {
+      wheatPiece.classList.remove("active");
+    }
+
+    const aroundPieces = this.getAdjacentPositions(position);
+    const diagonalPieces = this.getDiagonalPositions(position);
+
+    const allPieces = aroundPieces.concat(diagonalPieces);
+
+    for (const aroundPiece of allPieces) {
+      const wheat = document.querySelector(
+        `.recepPiece[data-position="${aroundPiece}"] .wheat`
+      );
+      if (wheat) {
+        wheat.classList.add("active");
+      }
+    }
   }
 
   addCrackPiece(position) {
     const crackPieces = document.querySelectorAll(".crack");
     for (const crackPiece of crackPieces) {
-      crackPiece.classList.remove("crack");
+      crackPiece.classList.remove("active");
     }
 
     const aroundPieces = this.getAdjacentPositions(position);
 
     for (const aroundPiece of aroundPieces) {
-      const recepPiece = document.querySelector(
-        `.recepPiece[data-position="${aroundPiece}"]`
+      const crack = document.querySelector(
+        `.recepPiece[data-position="${aroundPiece}"] .crack`
       );
-      if (recepPiece) {
-        recepPiece.classList.add("crack");
+      if (crack) {
+        crack.classList.add("active");
       }
     }
   }
 
-  removeAdjacentPieces(piece) {
-    const positionPiece = piece.getPosition();
-    const aroundPieces = this.getAdjacentPositions(positionPiece);
+  removeAdjacentPieces(position) {
+    const aroundPieces = this.getAdjacentPositions(position);
     const containerPieces = document.querySelector(".containerPieces");
 
     for (const aroundPiece of aroundPieces) {
-      const recepPiece = document.querySelector(
-        `.recepPiece[data-position="${aroundPiece}"]`
+      const piece = document.querySelector(
+        `.recepPiece[data-position="${aroundPiece}"] .piece`
       );
-      if (recepPiece && recepPiece.children.length > 0) {
-        const pieceName = recepPiece.children[0].getAttribute("data-name");
+      if (piece) {
+        const pieceName = piece.getAttribute("data-name");
         this.pieces.getPiece(pieceName).setPosition(null);
-        containerPieces.appendChild(recepPiece.children[0]);
-        recepPiece.innerHTML = "";
+        containerPieces.appendChild(piece);
+
+        if (pieceName === "olivier") {
+          const crackPieces = document.querySelectorAll(".wheat");
+          for (const crackPiece of crackPieces) {
+            crackPiece.classList.remove("active");
+          }
+        }
       }
     }
   }
@@ -162,6 +207,14 @@ export default class Game {
       const recepPiece = document.createElement("div");
       recepPiece.classList.add("recepPiece");
       recepPiece.setAttribute("data-position", i + 1);
+      const crak = document.createElement("div");
+      crak.classList.add("bg");
+      crak.classList.add("crack");
+      recepPiece.appendChild(crak);
+      const wheat = document.createElement("div");
+      wheat.classList.add("bg");
+      wheat.classList.add("wheat");
+      recepPiece.appendChild(wheat);
       containerGame.appendChild(recepPiece);
     }
   }

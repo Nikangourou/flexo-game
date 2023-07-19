@@ -11,7 +11,10 @@
         "name": "Avec la quantité de projet, <b>City Haut</b> se retrouve sous l'eau, reléguez-le dans un coin, il n'a pas de temp pour vous.",
         "id": 3
     },{
-        "name": "Le champ du paysan devra être honoré de la présence majestueuse du <b>Chat</b>, de <b>La Lionne</b>, du <b>Renne</b>, du <b>Raton</b> et de <b>l'Ermining</b>",
+        "name": "Le champ du paysan devra être honoré de la présence majestueuse de <b>Tata Jacq</b>, de <b>La Lionne</b>, du <b>Renne</b>, du <b>Raton</b> et de <b>l'Ermining</b>",
         "id": 4
+    },{
+        "name" : "Déposer <b>Le Roi</b> majestueux en E4, là où il règne en maître sur le Flexo",
+        "id": 5
     }
 ]

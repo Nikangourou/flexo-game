@@ -47,7 +47,15 @@ export default class Rule {
     return this.game.checkCornerPiece(piece);
   }
 
-  checkRule4() {}
+  checkRule4() {
+    const piece = this.pieces.getPiece("olivier");
+    return this.game.checkAroundPaysan(piece.getPosition());
+  }
+
+  checkRule5() {
+    const piece = this.pieces.getPiece("nicolas");
+    return piece.getPosition() === 10;
+  }
 
   checkRule() {
     this.checkRulePredator();
@@ -70,7 +78,13 @@ export default class Rule {
     }
 
     if (this.id === 4) {
+      // return true;
       return this.checkRule4();
+    }
+
+    if (this.id === 5) {
+      // return true;
+      return this.checkRule5();
     }
   }
 

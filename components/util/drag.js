@@ -17,14 +17,7 @@ export default class Drag {
       if (draggedPiece) {
         event.currentTarget.classList.add("preview");
       }
-      
-      if (draggedPiece.getAttribute("data-name") === "osei"){
-        let position = event.currentTarget.getAttribute("data-position");
-        position = parseInt(position);
-        this.game.addCrackPiece(position);
-      }
     };
-
     // Fonction de réinitialisation de la prévisualisation du réceptacle
     const resetReceptaclePreview = () => {
       for (const receptacle of receptacles) {
@@ -52,12 +45,12 @@ export default class Drag {
       const receptacle = event.currentTarget;
 
       // Vérifier si le réceptacle contient déjà une pièce ou si le receptacle n'est pas le containerPieces
-      if (
-        receptacle.children.length > 0 &&
-        !receptacle.classList.contains("containerPieces")
-      ) {
-        return;
-      }
+      // if (
+      //   receptacle.children.length > 0 &&
+      //   !receptacle.classList.contains("containerPieces")
+      // ) {
+      //   return;
+      // }
 
       // get piece name
       const pieceName = draggedPiece.getAttribute("data-name");
@@ -70,10 +63,17 @@ export default class Drag {
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
 
+      const piece = this.pieces.getPiece(pieceName);
+
       if (pieceName === "osei") {
-        this.game.removeAdjacentPieces(this.pieces.getPiece(pieceName));
+        this.game.removeAdjacentPieces(piece.getPosition());
+        this.game.addCrackPiece(piece.getPosition());
       }
-      
+
+      if(pieceName === "olivier"){
+        this.game.addWheatPiece(piece.getPosition());
+      }
+
       this.game.nbPiecesInGame = document.querySelectorAll(
         ".containerGame .piece"
       ).length;

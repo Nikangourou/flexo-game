@@ -12,14 +12,39 @@
     height: 100px;
     background-color: #650000;
     text-align: center;
-
-    &.crack {
-      background-image: url("/images/crack.png");
-      background-size: cover;
-    }
+    position: relative;
 
     &.preview {
       background-color: $green;
     }
+
+    .bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .crack.active {
+      background-image: url("/images/crack.png");
+      z-index: 1;
+    }
+    .wheat.active {
+      background-image: url("/images/wheat.webp");
+
+      & + .piece {
+        animation: colorRotate 3s linear infinite;
+      }
+    }
+  }
+}
+
+// animation
+@keyframes colorRotate {
+  100% {
+    -webkit-filter: hue-rotate(360deg);
   }
 }

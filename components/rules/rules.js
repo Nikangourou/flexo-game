@@ -17,18 +17,20 @@ export default class Rules {
     let tmpNbShowRules = 1;
     for (let i = 0; i < this.nbShowRules; i++) {
       const rule = document.querySelector(`.rule:nth-child(${i + 1})`);
-      rule.classList.add("active");
-      if (this.rules[i].checkRule()) {
-        rule.classList.add("valid");
-        tmpNbShowRules++;
-      } else {
-        rule.classList.remove("valid");
+      if (rule) {
+        rule.classList.add("active");
+        if (this.rules[i].checkRule()) {
+          rule.classList.add("valid");
+          tmpNbShowRules++;
+        } else {
+          rule.classList.remove("valid");
+        }
       }
-    }
-  
-    if(tmpNbShowRules > this.nbShowRules) {
-      this.nbShowRules = tmpNbShowRules;
-      this.checkRules();
+
+      if (tmpNbShowRules > this.nbShowRules) {
+        this.nbShowRules = tmpNbShowRules;
+        this.checkRules();
+      }
     }
   }
 
