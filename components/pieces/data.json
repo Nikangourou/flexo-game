@@ -5,7 +5,7 @@
     "id": "paul"
   },
   {
-    "name": "Le fou",
+    "name": "Le Fou",
     "picture": "renaud.png",
     "id": "renaud"
   },
@@ -15,7 +15,7 @@
     "id": "rodrigue"
   },
   {
-    "name": "Francis",
+    "name": "Cisco",
     "picture": "francis.png",
     "id": "francis"
   },
@@ -40,7 +40,7 @@
     "id": "marianne"
   },
   {
-    "name": "François",
+    "name": "Golden Boy",
     "picture": "francois.png",
     "id": "francois"
   },
@@ -100,7 +100,7 @@
     "id": "philippe"
   },
   {
-    "name": "Isabelle",
+    "name": "La Chamane",
     "picture": "isabelle.png",
     "id": "isabelle"
   },

@@ -28,6 +28,11 @@
       pointer-events: none;
     }
 
+    .office.active{
+      background-color : #51b4b974;
+      z-index: 2;
+    }
+
     .crack.active {
       background-image: url("/images/crack.png");
       z-index: 1;
@@ -35,7 +40,7 @@
     .wheat.active {
       background-image: url("/images/wheat.webp");
 
-      & + .piece {
+      & ~ .piece {
         animation: colorRotate 3s linear infinite;
       }
     }

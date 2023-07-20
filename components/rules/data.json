@@ -12,19 +12,31 @@
     "id": 3
   },
   {
-    "name": "Le champ du <b>Paysan</b> devra être honoré de la présence majestueuse de <b>Tata Jacq</b>, de <b>La Lionne</b>, du <b>Renne</b>, du <b>Raton</b> et de <b>l'Ermining</b>",
+    "name": "Le champ du <b>Paysan</b> devra être honoré de la présence majestueuse de <b>Tata Jacq</b>, de <b>La Lionne</b>, du <b>Renne</b>, du <b>Raton</b> et de <b>l'Ermining</b>.",
     "id": 4
   },
   {
-    "name": "Déposer <b>Le Roi</b> majestueux en E4, là où il règne en maître sur le Flexo",
+    "name": "<b>Le Joker</b> fait preuve d'une remarquable adaptabilité, placez-le où vous le souhaitez.",
     "id": 5
   },
   {
-    "name" : "Tel un gardien vigilant, <b>Le Fou</b> s'érige sur la diagonale du <b>Roi</b>, protégeant ainsi son souverain.",
+    "name": "Déposer <b>Le Roi</b> majestueux en E4, là où il règne en maître sur le Flexo.",
     "id": 6
   },
   {
-    "name": "Placer fba amina sarah raton dans un bureau",
+    "name": "Tel un gardien vigilant, <b>Le Fou</b> s'érige sur la diagonale du <b>Roi</b>, protégeant ainsi son souverain.",
     "id": 7
+  },
+  {
+    "name": "Disposer dans un bureau : <b>Le Capitaine</b>, ce leader émérite au charisme magnétique, <b>La Reptilienne</b>, dont la ruse et la subtilité égarent ses semblables, <b>Le Chat</b>, félin agile et énigmatique, ainsi que <b>Le Renne</b>, modeste gardien des secrets enfouis.",
+    "id": 8
+  },
+  {
+    "name": "<b>L'Elfe</b> et <b>La Chamane</b>, ont unis leurs pouvoirs pour créer <b>La Bête</b>, le destin exige que cette créature prenne sa place à proximité de ses créatrices.",
+    "id": 9
+  },
+  {
+    "name": "<b>Le Paysan</b>, dont le projet se nourrit de l'essence du savoir, implore l'estimation éclairée du <b>Fou</b> ; ainsi, placez ces deux éminents protagonistes côte à côte.",
+    "id": 10
   }
 ]

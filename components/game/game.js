@@ -208,6 +208,29 @@ export default class Game {
     }
   }
 
+  addOffice() {
+    const officePieces = document.querySelectorAll(".office");
+    for (const officePiece of officePieces) {
+      officePiece.classList.add("active");
+    }
+  }
+
+  getOfficePiece() {
+    const offices = [6, 11, 15, 20];
+    let pieces = [];
+
+    for (const office of offices) {
+      const piece = document.querySelector(
+        `.recepPiece[data-position="${office}"] .piece`
+      );
+      if (piece) {
+        const pieceName = piece.getAttribute("data-name");
+        pieces.push(pieceName);
+      }
+    }
+    return pieces;
+  }
+
   endGame(message) {
     const loose = document.querySelector(".containerLoose");
     const content = loose.querySelector(".message");
@@ -217,6 +240,8 @@ export default class Game {
 
   init() {
     const containerGame = document.querySelector(".containerGame");
+    const offices = [6, 11, 15, 20];
+
     for (let i = 0; i < this.nbPieces; i++) {
       const recepPiece = document.createElement("div");
       recepPiece.classList.add("recepPiece");
@@ -230,6 +255,13 @@ export default class Game {
       wheat.classList.add("wheat");
       recepPiece.appendChild(wheat);
       containerGame.appendChild(recepPiece);
+
+      if (offices.includes(i + 1)) {
+        const office = document.createElement("div");
+        office.classList.add("bg");
+        office.classList.add("office");
+        recepPiece.appendChild(office);
+      }
     }
   }
 }

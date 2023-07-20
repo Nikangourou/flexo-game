@@ -53,38 +53,91 @@ export default class Rule {
   }
 
   checkRule5() {
+    const joker = this.pieces.getPiece("rodrigue");
+
+    if (joker.getPosition()) {
+      return true;
+    }
+
+    return false;
+  }
+
+  checkRule6() {
     const piece = this.pieces.getPiece("nicolas");
     return piece.getPosition() === 10;
   }
 
-  checkRule6() {
+  checkRule7() {
     const piece1 = this.pieces.getPiece("renaud");
     const piece2 = this.pieces.getPiece("nicolas");
     return this.game.checkDiagonalPieces(piece1, piece2);
   }
 
+  checkRule8() {
+    this.game.addOffice();
+    const officePieces = this.game.getOfficePiece();
+    const officeRules = ["fba", "stephane", "amina", "sarah"];
+
+    if (officePieces.length !== officeRules.length) {
+      return false;
+    }
+
+    for (const officePiece of officePieces) {
+      if (!officeRules.includes(officePiece)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  checkRule9() {
+    const isabelle = this.pieces.getPiece("isabelle");
+    const felicie = this.pieces.getPiece("felicie");
+    const kevin = this.pieces.getPiece("kevin");
+
+    if (!this.game.checkAdjacentPieces(isabelle, kevin)) {
+      return false;
+    }
+
+    if (!this.game.checkAdjacentPieces(felicie, kevin)) {
+      return false;
+    }
+
+    return true;
+  }
+
+  checkRule10() {
+    const olivier = this.pieces.getPiece("olivier");
+    const renaud = this.pieces.getPiece("renaud");
+
+    if (!this.game.checkAdjacentPieces(olivier, renaud)) {
+      return false;
+    }
+
+    return true;
+  }
+
   checkRule() {
     this.checkRulePredator();
 
-    // rule 1
     if (this.id === 1) {
-      // return true;
+      return true;
       return this.checkRule1();
     }
-    // rule 2
+
     if (this.id === 2) {
-      // return true;
+      return true;
       return this.checkRule2();
     }
 
-    // rule 3
     if (this.id === 3) {
-      // return true;
+      return true;
       return this.checkRule3();
     }
 
     if (this.id === 4) {
-      // return true;
+      return true;
       return this.checkRule4();
     }
 
@@ -96,6 +149,25 @@ export default class Rule {
     if (this.id === 6) {
       // return true;
       return this.checkRule6();
+    }
+
+    if (this.id === 7) {
+      // return true;
+      return this.checkRule7();
+    }
+
+    if (this.id === 8) {
+      // return true;
+      return this.checkRule8();
+    }
+
+    if (this.id === 9) {
+      // return true;
+      return this.checkRule9();
+    }
+
+    if (this.id === 10) {
+      return this.checkRule10();
     }
   }
 
