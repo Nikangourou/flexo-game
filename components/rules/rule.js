@@ -118,26 +118,41 @@ export default class Rule {
     return true;
   }
 
+  checkRule11() {
+    const francois = this.pieces.getPiece("francois");
+    const robin = this.pieces.getPiece("robin");
+
+    if(!this.game.checkCornerPiece(francois)){
+      return false;
+    }
+
+    if (!this.game.checkAdjacentPieces(francois, robin)) {
+      return false;
+    }
+
+    return true;
+  }
+
   checkRule() {
     this.checkRulePredator();
 
     if (this.id === 1) {
-      return true;
+      // return true;
       return this.checkRule1();
     }
 
     if (this.id === 2) {
-      return true;
+      // return true;
       return this.checkRule2();
     }
 
     if (this.id === 3) {
-      return true;
+      // return true;
       return this.checkRule3();
     }
 
     if (this.id === 4) {
-      return true;
+      // return true;
       return this.checkRule4();
     }
 
@@ -167,7 +182,13 @@ export default class Rule {
     }
 
     if (this.id === 10) {
+      // return true;
       return this.checkRule10();
+    }
+
+    if(this.id === 11){
+      // return true;
+      return this.checkRule11();
     }
   }
 

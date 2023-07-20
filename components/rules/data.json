@@ -38,5 +38,14 @@
   {
     "name": "<b>Le Paysan</b>, dont le projet se nourrit de l'essence du savoir, implore l'estimation éclairée du <b>Fou</b> ; ainsi, placez ces deux éminents protagonistes côte à côte.",
     "id": 10
+  }, {
+    "name" : "En fin stratège, <b>Golden Boy</b>, s'est éclipsé pour mobiliser son réseau. Dorénavant, vous devez le placer <strike>chez BETC</strike> dans un coin, où il sera en parfaite synergie à côté de son fidèle acolyte <b>Robin</b>.",
+    "id" : 11
+  }, {
+    "name" : "Cisco Anais Mariane Agathe",
+    "id" : 12
+  },{
+    "name" : "Les super héros cotoiients les super héros !",
+    "id" : 13
   }
 ]

@@ -43,17 +43,41 @@ export default class Drag {
     const handleDrop = (event) => {
       event.preventDefault();
       const receptacle = event.currentTarget;
-
-      // Vérifier si le réceptacle contient déjà une pièce ou si le receptacle n'est pas le containerPieces
-      // if (
-      //   receptacle.children.length > 0 &&
-      //   !receptacle.classList.contains("containerPieces")
-      // ) {
-      //   return;
-      // }
-
-      // get piece name
       const pieceName = draggedPiece.getAttribute("data-name");
+      const piece = this.pieces.getPiece(pieceName);
+
+      // Vérifier si le réceptacle contient déjà une pièce et si le receptacle n'est pas le containerPieces
+      if (
+        receptacle.querySelector(".piece") &&
+        !receptacle.classList.contains("containerPieces")
+      ) {
+        // inverser les pièces
+     
+        const pieceInReceptacle = receptacle.querySelector(".piece");
+        const pieceInReceptacleName =
+          pieceInReceptacle.getAttribute("data-name");
+        const pieceInReceptacleObject = this.pieces.getPiece(
+          pieceInReceptacleName
+        );
+
+        let tmpPosition = piece.getPosition();
+
+        piece.setPosition(pieceInReceptacleObject.getPosition());
+        pieceInReceptacleObject.setPosition(tmpPosition);
+
+        if (!tmpPosition) {
+          const containerPieces = document.querySelector(".containerPieces");
+          containerPieces.appendChild(pieceInReceptacle);
+        }else{
+          const resep = document.querySelector(`.recepPiece[data-position="${pieceInReceptacleObject.getPosition()}"]`);
+          console.log(resep);
+          resep.appendChild(pieceInReceptacle);
+        }
+        receptacle.appendChild(draggedPiece);
+
+        // debuger le code ici pour clear !!!!!!!!!!!!
+      }
+
       // get piece object
       this.pieces
         .getPiece(pieceName)
@@ -63,15 +87,14 @@ export default class Drag {
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
 
-      const piece = this.pieces.getPiece(pieceName);
-
       if (pieceName === "osei") {
         this.game.removeAdjacentPieces(piece.getPosition());
         this.game.addCrackPiece(piece.getPosition());
       }
 
-      if(pieceName === "olivier"){
+      if (pieceName === "olivier") {
         this.game.addWheatPiece(piece.getPosition());
+        console.log("olivier");
       }
 
       this.game.nbPiecesInGame = document.querySelectorAll(
