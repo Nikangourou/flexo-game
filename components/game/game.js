@@ -88,6 +88,10 @@ export default class Game {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
 
+    if (positionPiece1 === 0 || positionPiece2 === 0) {
+      return false;
+    }
+
     const aroundPositions = this.getAdjacentPositions(positionPiece1);
 
     for (const aroundPosition of aroundPositions) {
@@ -152,6 +156,10 @@ export default class Game {
       wheatPiece.classList.remove("active");
     }
 
+    if (position === 0) {
+      return;
+    }
+
     const aroundPieces = this.getAdjacentPositions(position);
     const diagonalPieces = this.getDiagonalPositions(position);
 
@@ -173,6 +181,10 @@ export default class Game {
       crackPiece.classList.remove("active");
     }
 
+    if (position === 0) {
+      return;
+    }
+
     const aroundPieces = this.getAdjacentPositions(position);
 
     for (const aroundPiece of aroundPieces) {
@@ -186,6 +198,10 @@ export default class Game {
   }
 
   removeAdjacentPieces(position) {
+    if (position === 0) {
+      return;
+    }
+
     const aroundPieces = this.getAdjacentPositions(position);
     const containerPieces = document.querySelector(".containerPieces");
 
@@ -199,9 +215,9 @@ export default class Game {
         containerPieces.appendChild(piece);
 
         if (pieceName === "olivier") {
-          const crackPieces = document.querySelectorAll(".wheat");
-          for (const crackPiece of crackPieces) {
-            crackPiece.classList.remove("active");
+          const wheatPieces = document.querySelectorAll(".wheat");
+          for (const wheatPiece of wheatPieces) {
+            wheatPiece.classList.remove("active");
           }
         }
       }

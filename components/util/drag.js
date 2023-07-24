@@ -45,6 +45,8 @@ export default class Drag {
       const receptacle = event.currentTarget;
       const pieceName = draggedPiece.getAttribute("data-name");
       const piece = this.pieces.getPiece(pieceName);
+      let pieceInReceptacleName = null
+      let pieceInReceptacleObject = null
 
       // Vérifier si le réceptacle contient déjà une pièce et si le receptacle n'est pas le containerPieces
       if (
@@ -52,11 +54,11 @@ export default class Drag {
         !receptacle.classList.contains("containerPieces")
       ) {
         // inverser les pièces
-     
+
         const pieceInReceptacle = receptacle.querySelector(".piece");
-        const pieceInReceptacleName =
+         pieceInReceptacleName =
           pieceInReceptacle.getAttribute("data-name");
-        const pieceInReceptacleObject = this.pieces.getPiece(
+        pieceInReceptacleObject = this.pieces.getPiece(
           pieceInReceptacleName
         );
 
@@ -68,20 +70,17 @@ export default class Drag {
         if (!tmpPosition) {
           const containerPieces = document.querySelector(".containerPieces");
           containerPieces.appendChild(pieceInReceptacle);
-        }else{
-          const resep = document.querySelector(`.recepPiece[data-position="${pieceInReceptacleObject.getPosition()}"]`);
-          console.log(resep);
+        } else {
+          const resep = document.querySelector(
+            `.recepPiece[data-position="${pieceInReceptacleObject.getPosition()}"]`
+          );
           resep.appendChild(pieceInReceptacle);
         }
         receptacle.appendChild(draggedPiece);
-
-        // debuger le code ici pour clear !!!!!!!!!!!!
       }
 
-      // get piece object
-      this.pieces
-        .getPiece(pieceName)
-        .setPosition(receptacle.getAttribute("data-position"));
+      piece.setPosition(receptacle.getAttribute("data-position"));``
+
 
       // Ajouter la pièce au réceptacle
       receptacle.appendChild(draggedPiece);
@@ -92,9 +91,17 @@ export default class Drag {
         this.game.addCrackPiece(piece.getPosition());
       }
 
+      if(pieceInReceptacleName === "osei") {
+        this.game.removeAdjacentPieces(pieceInReceptacleObject.getPosition());
+        this.game.addCrackPiece(pieceInReceptacleObject.getPosition());
+      }
+
       if (pieceName === "olivier") {
         this.game.addWheatPiece(piece.getPosition());
-        console.log("olivier");
+      }
+
+      if(pieceInReceptacleName === "olivier") {
+        this.game.addWheatPiece(pieceInReceptacleObject.getPosition());
       }
 
       this.game.nbPiecesInGame = document.querySelectorAll(

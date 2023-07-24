@@ -8,8 +8,6 @@ export default class Rule {
 
   checkRulePredator() {
     const lionne = this.pieces.getPiece("kelthoum");
-    const pirahna = this.pieces.getPiece("lea");
-
     const renne = this.pieces.getPiece("stephane");
     const raton = this.pieces.getPiece("philippe");
 
@@ -19,14 +17,6 @@ export default class Rule {
 
     if (this.game.checkAdjacentPieces(lionne, raton)) {
       this.game.endGame("Le Raton a été mangé par La Lionne");
-    }
-
-    if (this.game.checkAdjacentPieces(pirahna, renne)) {
-      this.game.endGame("Le Renne a été mangé par Le Pirahna");
-    }
-
-    if (this.game.checkAdjacentPieces(pirahna, raton)) {
-      this.game.endGame("Le Raton a été mangé par Le Pirahna");
     }
   }
 
