@@ -16,6 +16,10 @@
 
       &.active {
         display: block;
+
+        &:not(.valid) {
+          order: 1;
+        }
       }
 
       &.valid {
