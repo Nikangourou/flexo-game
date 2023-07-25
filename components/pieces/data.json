@@ -1,6 +1,6 @@
 [
   {
-    "name": "Paul",
+    "name": "Bob",
     "picture": "paul.png",
     "id": "paul"
   },
@@ -50,7 +50,7 @@
     "id": "fba"
   },
   {
-    "name": "Robin",
+    "name": "Robinou",
     "picture": "robin.png",
     "id": "robin"
   },
