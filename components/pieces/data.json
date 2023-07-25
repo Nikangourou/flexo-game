@@ -10,7 +10,7 @@
     "id": "renaud"
   },
   {
-    "name": "Le Joker",
+    "name": "Batman",
     "picture": "rodrigue.png",
     "id": "rodrigue"
   },
@@ -20,7 +20,7 @@
     "id": "francis"
   },
   {
-    "name": "Anais",
+    "name": "Le corbeau",
     "picture": "anais.png",
     "id": "anais"
   },
@@ -75,12 +75,12 @@
     "id": "olivier"
   },
   {
-    "name": "Agathe",
+    "name": "Gagathe",
     "picture": "agathe.png",
     "id": "agathe"
   },
   {
-    "name": "Teddy Riner",
+    "name": "Hulk",
     "picture": "osei.png",
     "id": "osei"
   },

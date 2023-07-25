@@ -43,9 +43,9 @@ export default class Rule {
   }
 
   checkRule5() {
-    const joker = this.pieces.getPiece("rodrigue");
+    const batman = this.pieces.getPiece("rodrigue");
 
-    if (joker.getPosition()) {
+    if (batman.getPosition()) {
       return true;
     }
 
@@ -112,7 +112,7 @@ export default class Rule {
     const francois = this.pieces.getPiece("francois");
     const robin = this.pieces.getPiece("robin");
 
-    if(!this.game.checkCornerPiece(francois)){
+    if (!this.game.checkCornerPiece(francois)) {
       return false;
     }
 
@@ -123,6 +123,91 @@ export default class Rule {
     return true;
   }
 
+  checkRule12() {
+    const francis = this.pieces.getPiece("francis");
+    const anais = this.pieces.getPiece("anais");
+    const kevin = this.pieces.getPiece("kevin");
+
+    if (!this.game.checkAdjacentPieces(anais, kevin)) {
+      return false;
+    }
+
+    if (!this.game.checkAdjacentPieces(francis, kevin)) {
+      return false;
+    }
+
+    return true;
+  }
+
+  checkRule13() {
+    const hulk = this.pieces.getPiece("osei");
+    const batman = this.pieces.getPiece("rodrigue");
+
+    if (!this.game.checkAdjacentPieces(hulk, batman)) {
+      return false;
+    }
+
+    return true;
+  }
+
+  checkRule14() {
+    const agathe = this.pieces.getPiece("agathe");
+    const anais = this.pieces.getPiece("anais");
+    const isabelle = this.pieces.getPiece("isabelle");
+
+    if (
+      this.game.checkAdjacentPieces(agathe, anais) ||
+      this.game.checkAdjacentPieces(agathe, isabelle)
+    ) {
+      if (this.game.checkAdjacentPieces(agathe, isabelle)) {
+        return true;
+      }
+      if (this.game.checkAdjacentPieces(anais, isabelle)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  checkRule15() {
+    const robin = this.pieces.getPiece("robin");
+    const marianne = this.pieces.getPiece("marianne");
+    const rodrigue = this.pieces.getPiece("rodrigue");
+    const osei = this.pieces.getPiece("osei");
+
+    if (
+      !this.game.checkAdjacentPieces(robin, marianne) &&
+      !this.game.checkAdjacentPieces(robin, rodrigue)
+    ) {
+      return false;
+    }
+
+    if (!this.game.checkAdjacentPieces(marianne, rodrigue)) {
+      return false;
+    }
+
+    if (
+      !this.game.checkAdjacentPieces(osei, marianne) &&
+      !this.game.checkAdjacentPieces(osei, rodrigue)
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
+  checkRule16() {
+    const felicie = this.pieces.getPiece("felicie");
+    const kelthoum = this.pieces.getPiece("kelthoum");
+
+    if (!this.game.checkAdjacentPieces(felicie, kelthoum)) {
+      return false;
+    }
+
+    return true;
+  }
+  
   checkRule() {
     this.checkRulePredator();
 
@@ -176,9 +261,32 @@ export default class Rule {
       return this.checkRule10();
     }
 
-    if(this.id === 11){
+    if (this.id === 11) {
       // return true;
       return this.checkRule11();
+    }
+
+    if (this.id === 12) {
+      // return true;
+      return this.checkRule12();
+    }
+
+    if (this.id === 13) {
+      // return true;
+      return this.checkRule13();
+    }
+
+    if (this.id === 14) {
+      // return true;
+      return this.checkRule14();
+    }
+    if (this.id === 15) {
+      // return true;
+      return this.checkRule15();
+    }
+    if(this.id === 16) {
+      // return true;
+      return this.checkRule16();
     }
   }
 

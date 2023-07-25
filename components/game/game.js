@@ -88,7 +88,7 @@ export default class Game {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
 
-    if (positionPiece1 === 0 || positionPiece2 === 0) {
+    if (positionPiece1 === 0 || positionPiece2 === 0 || isNaN(positionPiece1) || isNaN(positionPiece2) ) {
       return false;
     }
 

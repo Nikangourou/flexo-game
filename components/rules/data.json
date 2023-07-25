@@ -16,7 +16,7 @@
     "id": 4
   },
   {
-    "name": "<b>Le Joker</b> fait preuve d'une remarquable adaptabilité, placez-le où vous le souhaitez.",
+    "name": "<b>Batman</b> est votre super-héros, placez-le où vous voulez.",
     "id": 5
   },
   {
@@ -38,14 +38,27 @@
   {
     "name": "<b>Le Paysan</b>, dont le projet se nourrit de l'essence du savoir, implore l'estimation éclairée du <b>Fou</b> ; ainsi, placez ces deux éminents protagonistes côte à côte.",
     "id": 10
-  }, {
-    "name" : "En fin stratège, <b>Golden Boy</b>, s'est éclipsé pour mobiliser son réseau. Dorénavant, vous devez le placer <strike>chez BETC</strike> dans un coin, où il sera en parfaite synergie à côté de son fidèle acolyte <b>Robin</b>.",
-    "id" : 11
-  }, {
-    "name" : "Cisco Anais Mariane Agathe",
-    "id" : 12
+  },
+  {
+    "name": "En fin stratège, <b>Golden Boy</b>, s'est éclipsé pour mobiliser son réseau. Dorénavant, vous devez le placer <strike>chez BETC</strike> dans un coin, où il sera en parfaite synergie à côté de son fidèle acolyte <b>Robin</b>.",
+    "id": 11
+  },
+  {
+    "name": "<b>Le Corbeau</b> et <b>Cisco</b>, parés de leur masque protecteur, se tiennent aux aguets près de <b>La Bête</b>, redoutant les maladies qu'elle pourrait répandre.",
+    "id": 12
+  },
+  {
+    "name": "Les super héros côtoient les super héros ! Placer <b>Hulk</b> à côté de <b>Batman</b>.",
+    "id": 13
+  },
+  {
+    "name": "<b>Gagathe</b>, <b>Le Corbeau</b> et <b>La Chamane</b> se rendent au carnaval de Venise. Placer les à côté",
+    "id": 14
   },{
-    "name" : "Les super héros cotoiients les super héros !",
-    "id" : 13
+    "name": "<b>Robin</b> doit confier un message capital à <b>Hulk</b>. Ce précieux message doit voyager par l'entremise des fidèles intermédiaires, <b>Chemisette</b> et <b>Batman</b>.",
+    "id": 15
+  },{
+    "name": "Le carré d'or, même incomplet, ne se sépare pas ! Placer <b>La Lionne</b> à côté de <b>L'Elfe</b>.",
+    "id": 16
   }
 ]
