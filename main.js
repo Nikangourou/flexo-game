@@ -19,7 +19,17 @@ rules.init();
 const drag = new Drag(pieces, rules, game);
 drag.init();
 
-const replay = document.querySelector(".replay");
+const replay = document.querySelector(".btn.replay");
 replay.addEventListener("click", () => {
   window.location.reload();
 });
+
+const ok = document.querySelector(".btn.ok");
+ok.addEventListener("click", () => {
+  const containersFull = document.querySelectorAll(".containerFull");
+  for (const containerFull of containersFull) {
+    containerFull.classList.remove("active");
+  }
+});
+
+console.log("Bouge de la Renaud !")

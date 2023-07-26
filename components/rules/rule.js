@@ -12,11 +12,11 @@ export default class Rule {
     const raton = this.pieces.getPiece("philippe");
 
     if (this.game.checkAdjacentPieces(lionne, renne)) {
-      this.game.endGame("Le Renne a été mangé par La Lionne");
+      this.game.endGame("La Lionne à mangé Le Renne", "Tips :");
     }
 
     if (this.game.checkAdjacentPieces(lionne, raton)) {
-      this.game.endGame("Le Raton a été mangé par La Lionne");
+      this.game.endGame("La Lionne à mangé Le Raton");
     }
   }
 

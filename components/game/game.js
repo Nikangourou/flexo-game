@@ -247,10 +247,12 @@ export default class Game {
     return pieces;
   }
 
-  endGame(message) {
+  endGame(message, subMessage) {
     const loose = document.querySelector(".containerLoose");
     const content = loose.querySelector(".message");
     content.innerHTML = message;
+    const subContent = loose.querySelector(".subMessage");
+    subContent.innerHTML = subMessage;
     loose.classList.add("active");
   }
 

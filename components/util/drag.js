@@ -3,6 +3,7 @@ export default class Drag {
     this.pieces = pieces;
     this.rules = rules;
     this.game = game;
+    this.dragHulk = false;
   }
 
   init() {
@@ -45,8 +46,19 @@ export default class Drag {
       const receptacle = event.currentTarget;
       const pieceName = draggedPiece.getAttribute("data-name");
       const piece = this.pieces.getPiece(pieceName);
-      let pieceInReceptacleName = null
-      let pieceInReceptacleObject = null
+      let pieceInReceptacleName = null;
+      let pieceInReceptacleObject = null;
+
+      const crack = receptacle.querySelector(".crack.active");
+
+      if (crack) {
+        if (pieceName === "paul") {
+          crack.classList.remove("active");
+        }
+        else {
+          return false;
+        }
+      }
 
       // Vérifier si le réceptacle contient déjà une pièce et si le receptacle n'est pas le containerPieces
       if (
@@ -56,11 +68,8 @@ export default class Drag {
         // inverser les pièces
 
         const pieceInReceptacle = receptacle.querySelector(".piece");
-         pieceInReceptacleName =
-          pieceInReceptacle.getAttribute("data-name");
-        pieceInReceptacleObject = this.pieces.getPiece(
-          pieceInReceptacleName
-        );
+        pieceInReceptacleName = pieceInReceptacle.getAttribute("data-name");
+        pieceInReceptacleObject = this.pieces.getPiece(pieceInReceptacleName);
 
         let tmpPosition = piece.getPosition();
 
@@ -79,8 +88,8 @@ export default class Drag {
         receptacle.appendChild(draggedPiece);
       }
 
-      piece.setPosition(receptacle.getAttribute("data-position"));``
-
+      piece.setPosition(receptacle.getAttribute("data-position"));
+      ``;
 
       // Ajouter la pièce au réceptacle
       receptacle.appendChild(draggedPiece);
@@ -89,9 +98,15 @@ export default class Drag {
       if (pieceName === "osei") {
         this.game.removeAdjacentPieces(piece.getPosition());
         this.game.addCrackPiece(piece.getPosition());
+
+        if (!this.dragHulk) {
+          const container = document.querySelector(".containerOseiExp");
+          container.classList.add("active");
+          this.dragHulk = true;
+        }
       }
 
-      if(pieceInReceptacleName === "osei") {
+      if (pieceInReceptacleName === "osei") {
         this.game.removeAdjacentPieces(pieceInReceptacleObject.getPosition());
         this.game.addCrackPiece(pieceInReceptacleObject.getPosition());
       }
@@ -100,7 +115,7 @@ export default class Drag {
         this.game.addWheatPiece(piece.getPosition());
       }
 
-      if(pieceInReceptacleName === "olivier") {
+      if (pieceInReceptacleName === "olivier") {
         this.game.addWheatPiece(pieceInReceptacleObject.getPosition());
       }
 
