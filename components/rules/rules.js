@@ -7,6 +7,7 @@ export default class Rules {
     this.game = game;
     this.pieces = pieces;
     this.nbShowRules = 1;
+    this.time = 0;
   }
 
   addRule(rule) {
@@ -25,6 +26,13 @@ export default class Rules {
         } else {
           rule.classList.remove("valid");
         }
+      }
+
+      if (this.nbShowRules === this.rules.length + 1) {
+        const win = document.querySelector(".containerWin");
+        win.querySelector(".message").innerHTML = "Bravo ! Tu as fini le jeu en " + this.time + " secondes !";
+        win.querySelector(".subMessage").innerHTML = "Merci à toute la team Havas pour cette belle année ! See you soon !";
+        win.classList.add("active");
       }
 
       if (tmpNbShowRules > this.nbShowRules) {
@@ -46,6 +54,10 @@ export default class Rules {
       this.addRule(rule);
       containerRules.innerHTML += rule.getHtml();
     }
+
+    setInterval(() => {
+      this.time += 1;
+    }, 1000);
 
     this.checkRules();
   }

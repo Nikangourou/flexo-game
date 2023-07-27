@@ -88,7 +88,12 @@ export default class Game {
     const positionPiece1 = piece1.getPosition();
     const positionPiece2 = piece2.getPosition();
 
-    if (positionPiece1 === 0 || positionPiece2 === 0 || isNaN(positionPiece1) || isNaN(positionPiece2) ) {
+    if (
+      positionPiece1 === 0 ||
+      positionPiece2 === 0 ||
+      isNaN(positionPiece1) ||
+      isNaN(positionPiece2)
+    ) {
       return false;
     }
 
@@ -193,6 +198,22 @@ export default class Game {
       );
       if (crack) {
         crack.classList.add("active");
+      }
+    }
+  }
+
+  removeTimeSheet() {
+    const perso = ["renaud", "marianne", "quentin", "agathe"];
+    const containerPieces = document.querySelector(".containerPieces");
+
+    for (const p of perso) {
+      const piece = this.pieces.getPiece(p);
+      if (piece) {
+        const pieceDom = document.querySelector(`.piece[data-name="${p}"]`);
+        if (pieceDom) {
+          piece.setPosition(null);
+          containerPieces.appendChild(pieceDom);
+        }
       }
     }
   }

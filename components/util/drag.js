@@ -4,6 +4,7 @@ export default class Drag {
     this.rules = rules;
     this.game = game;
     this.dragHulk = false;
+    this.dragAmina = false
   }
 
   init() {
@@ -94,6 +95,16 @@ export default class Drag {
       // Ajouter la pièce au réceptacle
       receptacle.appendChild(draggedPiece);
       resetReceptaclePreview();
+
+      if(pieceName === "amina"){
+        if(!this.dragAmina){
+          this.game.removeTimeSheet()
+          this.dragAmina = true
+
+          const container = document.querySelector(".containerTimeSheet");
+          container.classList.add("active");
+        }
+      }
 
       if (pieceName === "osei") {
         this.game.removeAdjacentPieces(piece.getPosition());

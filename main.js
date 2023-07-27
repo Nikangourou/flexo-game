@@ -19,17 +19,22 @@ rules.init();
 const drag = new Drag(pieces, rules, game);
 drag.init();
 
-const replay = document.querySelector(".btn.replay");
-replay.addEventListener("click", () => {
-  window.location.reload();
-});
+const replays = document.querySelectorAll(".btn.replay");
 
-const ok = document.querySelector(".btn.ok");
-ok.addEventListener("click", () => {
-  const containersFull = document.querySelectorAll(".containerFull");
-  for (const containerFull of containersFull) {
-    containerFull.classList.remove("active");
-  }
-});
+for (const replay of replays) {
+  replay.addEventListener("click", () => {
+    window.location.reload();
+  });
+}
 
-console.log("Bouge de la Renaud !")
+const ok = document.querySelectorAll(".btn.ok");
+for (const button of ok) {
+  button.addEventListener("click", () => {
+    const containerFull = document.querySelector(".containerFull.active");
+    if (containerFull) {
+      containerFull.classList.remove("active");
+    }
+  });
+}
+
+console.log("Bouge de la Renaud, je sais que t'es là !");
