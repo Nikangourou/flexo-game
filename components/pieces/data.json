@@ -1,127 +1,127 @@
 [
   {
     "name": "Bob",
-    "picture": "paul.png",
+    "picture": "paul.webp",
     "id": "paul"
   },
   {
     "name": "Le Fou",
-    "picture": "renaud.png",
+    "picture": "renaud.webp",
     "id": "renaud"
   },
   {
     "name": "Batman",
-    "picture": "rodrigue.png",
+    "picture": "rodrigue.webp",
     "id": "rodrigue"
   },
   {
     "name": "Cisco",
-    "picture": "francis.png",
+    "picture": "francis.webp",
     "id": "francis"
   },
   {
     "name": "Le corbeau",
-    "picture": "anais.png",
+    "picture": "anais.webp",
     "id": "anais"
   },
   {
     "name": "La Bête",
-    "picture": "kevin.png",
+    "picture": "kevin.webp",
     "id": "kevin"
   },
   {
     "name": "City Haut",
-    "picture": "matthieu.png",
+    "picture": "matthieu.webp",
     "id": "matthieu"
   },
   {
     "name": "Chemisette",
-    "picture": "marianne.png",
+    "picture": "marianne.webp",
     "id": "marianne"
   },
   {
     "name": "Golden Boy",
-    "picture": "francois.png",
+    "picture": "francois.webp",
     "id": "francois"
   },
   {
     "name": "Le Capitaine",
-    "picture": "fba.png",
+    "picture": "fba.webp",
     "id": "fba"
   },
   {
     "name": "Robinou",
-    "picture": "robin.png",
+    "picture": "robin.webp",
     "id": "robin"
   },
   {
     "name": "Le Roi",
-    "picture": "nicolas.png",
+    "picture": "nicolas.webp",
     "id": "nicolas"
   },
   {
     "name": "Tata Jacq",
-    "picture": "quentin.png",
+    "picture": "quentin.webp",
     "id": "quentin"
   },
   {
     "name": "La Sorcière",
-    "picture": "sarah.png",
+    "picture": "sarah.webp",
     "id": "sarah"
   },
   {
     "name": "Le Paysan",
-    "picture": "olivier.png",
+    "picture": "olivier.webp",
     "id": "olivier"
   },
   {
     "name": "Gagathe",
-    "picture": "agathe.png",
+    "picture": "agathe.webp",
     "id": "agathe"
   },
   {
     "name": "Hulk",
-    "picture": "osei.png",
+    "picture": "osei.webp",
     "id": "osei"
   },
   {
     "name": "La Reptilienne",
-    "picture": "amina.png",
+    "picture": "amina.webp",
     "id": "amina"
   },
   {
     "name": "Le Renne",
-    "picture": "stephane.png",
+    "picture": "stephane.webp",
     "id": "stephane"
   },
   {
     "name": "Le Raton",
-    "picture": "philippe.png",
+    "picture": "philippe.webp",
     "id": "philippe"
   },
   {
     "name": "La Chamane",
-    "picture": "isabelle.png",
+    "picture": "isabelle.webp",
     "id": "isabelle"
   },
   {
     "name": "L'Italienne",
-    "picture": "lea.png",
+    "picture": "lea.webp",
     "id": "lea"
   },
   {
     "name": "La Lionne",
-    "picture": "kelthoum.png",
+    "picture": "kelthoum.webp",
     "id": "kelthoum"
   },
   {
     "name": "L'Erminig",
-    "picture": "frederic.png",
+    "picture": "frederic.webp",
     "id": "frederic"
   },
   {
     "name": "L'Elfe",
-    "picture": "felicie.png",
+    "picture": "felicie.webp",
     "id": "felicie"
   }
 ]
